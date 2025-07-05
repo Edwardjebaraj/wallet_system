@@ -12,6 +12,6 @@ RUN npm i
 
 COPY . .
 
-EXPOSE 2014
+EXPOSE 3400
 
 CMD ["npm", "start"]

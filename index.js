@@ -54,9 +54,9 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nclas
 /*!****************************!*\
   !*** ./src/db/database.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.getSequalizeClient = exports.sequelizeConnect = exports.sequelizeClient = void 0;\nconst sequelize_1 = __webpack_require__(/*! sequelize */ \"sequelize\");\nconst config_1 = __webpack_require__(/*! ../configs/config */ \"./src/configs/config.ts\");\nconst init_models_1 = __webpack_require__(/*! ../models/sequalize/init-models */ \"./src/models/sequalize/init-models.ts\");\nconst DIALECT = \"mysql\";\nasync function sequelizeConnect() {\n    const sequelizeClientConnection = new sequelize_1.Sequelize({\n        database: config_1.config.dbName,\n        username: config_1.config.dbUser,\n        password: config_1.config.dbPass,\n        host: config_1.config.dbHost,\n        port: parseInt(config_1.config.dbPort || \"\"),\n        dialect: DIALECT,\n        timezone: \"+05:30\",\n        minifyAliases: false,\n    });\n    await sequelizeClientConnection.authenticate();\n    exports.sequelizeClient = sequelizeClientConnection;\n    await (0, init_models_1.initModels)(exports.sequelizeClient);\n    return sequelizeClientConnection;\n}\nexports.sequelizeConnect = sequelizeConnect;\nasync function getSequalizeClient() {\n    if (exports.sequelizeClient) {\n        return exports.sequelizeClient;\n    }\n    const mainConnection = await sequelizeConnect();\n    return mainConnection;\n}\nexports.getSequalizeClient = getSequalizeClient;\n\n\n//# sourceURL=webpack://wallet-management/./src/db/database.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.getSequalizeClient = exports.sequelizeConnect = exports.sequelizeClient = void 0;\nconst sequelize_1 = __webpack_require__(/*! sequelize */ \"sequelize\");\nconst config_1 = __webpack_require__(/*! ../configs/config */ \"./src/configs/config.ts\");\nconst init_models_1 = __webpack_require__(/*! ../models/sequalize/init-models */ \"./src/models/sequalize/init-models.ts\");\nconst mysql2_1 = __importDefault(__webpack_require__(/*! mysql2 */ \"mysql2\"));\nconst DIALECT = \"mysql\";\nasync function sequelizeConnect() {\n    const sequelizeClientConnection = new sequelize_1.Sequelize({\n        database: config_1.config.dbName,\n        username: config_1.config.dbUser,\n        password: config_1.config.dbPass,\n        host: config_1.config.dbHost,\n        port: parseInt(config_1.config.dbPort || \"\"),\n        dialect: DIALECT,\n        dialectModule: mysql2_1.default,\n        timezone: \"+05:30\",\n        minifyAliases: false,\n    });\n    await sequelizeClientConnection.authenticate();\n    exports.sequelizeClient = sequelizeClientConnection;\n    await (0, init_models_1.initModels)(exports.sequelizeClient);\n    return sequelizeClientConnection;\n}\nexports.sequelizeConnect = sequelizeConnect;\nasync function getSequalizeClient() {\n    if (exports.sequelizeClient) {\n        return exports.sequelizeClient;\n    }\n    const mainConnection = await sequelizeConnect();\n    return mainConnection;\n}\nexports.getSequalizeClient = getSequalizeClient;\n\n\n//# sourceURL=webpack://wallet-management/./src/db/database.ts?");
 
 /***/ }),
 
@@ -227,6 +227,16 @@ module.exports = require("http-status");
 /***/ ((module) => {
 
 module.exports = require("joi");
+
+/***/ }),
+
+/***/ "mysql2":
+/*!*************************!*\
+  !*** external "mysql2" ***!
+  \*************************/
+/***/ ((module) => {
+
+module.exports = require("mysql2");
 
 /***/ }),
 

@@ -59,7 +59,8 @@ export class App {
     }
 
     async listen() {
-        await this.app.listen(this.app.get('port'), process.env.BASE_URL as string);
+        console.log(this.app.get('port'));
+        await this.app.listen(this.app.get('port'));
     }
  
  

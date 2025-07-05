@@ -6,11 +6,10 @@ process.env.PWD = process.cwd();
 const bodyParser = require('body-parser');
 
 export class App {
-    private app: Application;
+    public app: Application;
 
     constructor(private port?: number | string) {
         this.app = express();
-        this.settings();
         console.log('All Server Modules are loaded');
     }
 

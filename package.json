@@ -7,7 +7,7 @@
     "dev-start": "concurrently \"npm run watch-compile\" \"npm run watch-dev\"",
     "watch-compile": "swc src -w --out-dir build --source-maps inline",
     "watch-dev": "nodemon src/index.ts",
-    "start": "node index.js",
+    "start": "webpack && node build/index.js",
     "build": "webpack",
     "build-models": "sequelize-auto -e mysql -o \"./src/models/sequalize\" -d wallet_system -h localhost -u root -p 3306 -x root -l ts"
   },

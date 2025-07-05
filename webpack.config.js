@@ -7,7 +7,7 @@ module.exports = {
     mode: NODE_ENV,
     target: 'node',
     output: {
-        path: path.resolve(__dirname, ''),
+        path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
     },
     resolve: {

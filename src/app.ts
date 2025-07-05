@@ -60,7 +60,7 @@ export class App {
 
     async listen() {
         console.log(this.app.get('port'));
-        await this.app.listen(this.app.get('port'));
+        await this.app.listen(3400);
     }
  
  

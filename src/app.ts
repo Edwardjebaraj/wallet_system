@@ -32,6 +32,7 @@ export class App {
             origin: [
                 'http://localhost:4200',
                 'http://localhost:5000',
+                'https://wallet-ui-smoky.vercel.app',
                 `http://${process.env.BASE_URL as string}:4200`,
             ],
             methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],

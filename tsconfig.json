@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "rootDir": "./",
+        "outDir": "build",
+        "target": "esnext",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "typeRoots": ["src/types", "node_modules/@types/"],
+        "types": ["node"],
+        "lib": ["ES2021.String", "dom", "ES2015"]
+    },
+    "lib": ["ES2021.String", "dom", "ES2015"],
+    "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.cjs", "swc.config.ts"],
+    "exclude": ["node_modules", "build", "__tests__", "coverage"]
+}

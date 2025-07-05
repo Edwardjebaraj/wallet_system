@@ -2,6 +2,7 @@
 import { Sequelize } from 'sequelize';
 import { config } from '../configs/config';
 import { initModels } from '../models/sequalize/init-models';
+import mysql2 from "mysql2";
 
 const DIALECT = "mysql"; 
 export let sequelizeClient: Sequelize; 
@@ -16,6 +17,7 @@ export async function sequelizeConnect() {
       host: config.dbHost,
       port: parseInt(config.dbPort || ""),
       dialect: DIALECT,
+      dialectModule: mysql2,
       timezone: "+05:30",
         minifyAliases: false,
       

@@ -1,7 +1,7 @@
 import cors, { CorsOptions } from 'cors';
 import express, { Application } from 'express'; 
-// import { getSequalizeClient } from './db/database'; 
-// import router from './routes';
+import { getSequalizeClient } from './db/database'; 
+import router from './routes';
 process.env.PWD = process.cwd();
 const bodyParser = require('body-parser');
 
@@ -18,8 +18,8 @@ export class App {
         this.app.set('port', this.port);
 
         this.middlewares(); 
-        // await getSequalizeClient();
-        // await this.routes();
+        await getSequalizeClient();
+        await this.routes();
     }
  
 
@@ -55,7 +55,7 @@ export class App {
   res.send('Hello World')
 });
 
-        // this.app.use(router); 
+        this.app.use(router); 
     }
 
     async listen() {

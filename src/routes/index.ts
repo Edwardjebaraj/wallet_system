@@ -5,7 +5,7 @@ const router = Router();
 
 const defaultRoutes = [
   {
-    path: "/wallet",
+    path: "",
     route: walletRoutes,
   },
 ];

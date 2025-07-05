@@ -10,6 +10,7 @@ export class App {
 
     constructor(private port?: number | string) {
         this.app = express();
+        this.settings();
         console.log('All Server Modules are loaded');
     }
 
